@@ -6,6 +6,6 @@ curl -sSfL https://get.anchore.io/grype | sh -s -- -b /usr/local/bin
 
 COPY requirements.txt .
 
-COPY ./.github/actions/sbom-scan/entrypoint.sh
+COPY ./.github/actions/sbom-scan/entrypoint.sh .
 
 ENTRYPOINT ["bash", "entrypoint.sh"]
