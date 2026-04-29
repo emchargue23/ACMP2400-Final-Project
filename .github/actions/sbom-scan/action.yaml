@@ -7,4 +7,4 @@ outputs:
     value: ${{ steps.sbom-gen-and-scane-outputs.sbom-file }}
 runs:
   using: 'docker'
-  image: './.github/actions/sbom-scan/Dockerfile'
+  image: 'Dockerfile'
