@@ -1,5 +1,4 @@
-
-name: Build-Curl
+name: Build-Curl-Test-Deploy-Test-Undeploy
 on:
   workflow_dispatch
 permissions: {}
