@@ -1,18 +1,19 @@
 terraform {
   required_providers {
-    azurem = {
-      source = "hashicorp/azurem"
+    azurerm = {
+      source  = "hashicorp/azurerm"
       version = "4.68.0"
     }
   }
-  backend "azurem" {
-    resource_group_name = "rg-acmp-final"
+
+  backend "azurerm" {
+    resource_group_name  = "rg-acmp-final"
     storage_account_name = "acmp2400storageaccount"
-    container_name = "big-tf-state-acmp2400"
-    use_azuread_auth = true
+    container_name       = "big-tf-state-acmp2400"
+    use_azuread_auth     = true
   }
 }
 
-provider "azurem" {
+provider "azurerm" {
   features {}
 }
