@@ -17,8 +17,8 @@ terraform {
     features {}
   }
 
-  resource "azurem_container_registry" "teacher-acr" {
-    name = "emchargue"
+  resource "azurem_container_registry" "emchargue-acr" {
+    name = "acr_emchargueacmp2400"
     resource_group_name = "rg-emchargue"
     location = "Central US"
     sku = "Basic"
