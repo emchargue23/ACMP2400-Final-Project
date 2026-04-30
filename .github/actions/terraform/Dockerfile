@@ -1,4 +1,4 @@
-FROM ubuntu-latest@sha256:7607b6f97024ef850f1bd6e91a89273beb5973d04432c5b87f15f813d64b9c05
+FROM ubuntu-latest@sha256:cdb5fd928fced577cfecf12c8966e830fcdf42ee481fb0b91904eeddc2fe5eff
 
 RUN apt-get update && apt-get install -y --no-install-recommends gnupg software-properties-common curl
 
