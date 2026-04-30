@@ -22,14 +22,6 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_container_registry" "emchargue-acr" {
-  name                = "acremchargueacmp2400"
-  resource_group_name = "rg-emchargue"
-  location            = "Central US"
-  sku                 = "Basic"
-  admin_enabled       = false
-}
-
 resource "azurerm_container_group" "emchargue-aci" {
   name                = "acmp2400-emchargue-aci"
   location            = "Central US"
@@ -52,11 +44,11 @@ resource "azurerm_container_group" "emchargue-aci" {
     secure_environment_variables = {
       DJANGO_SECRET_KEY = var.DJANGO_SECRET_KEY_PROD
     }
+  }
 
-    image_registry_credential {
-      server   = "acremchargueacmp2400.azurecr.io"
-      username = var.ARM_CLIENT_ID
-      password = var.ARM_CLIENT_SECRET
-    }
+  image_registry_credential {
+    server   = "acremchargueacmp2400.azurecr.io"
+    username = var.ARM_CLIENT_ID
+    password = var.ARM_CLIENT_SECRET
   }
 }
