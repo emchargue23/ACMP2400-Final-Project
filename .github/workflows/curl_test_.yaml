@@ -60,14 +60,14 @@ jobs:
     - name: acr_login
       uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121
       with:
-        registry: acrteacheracmp2400.azurecr.io
+        registry: acremchargueacmp2400.azurecr.io
         username: ${{ secrets.ARM_CLIENT_ID }}
         password: ${{ secrets.ARM_CLIENT_SECRET }}
     - name: docker_build_tag_push
       run: |
-        docker build -t application-final
-        docker tag application-final acrteacheracmp2400.azurecr.io/final
-        docker push acrteacheracmp2400.azurecr.io/final
+        docker build -t application-final .
+        docker tag application-final acremchargueacmp2400.azurecr.io/final
+        docker push acremchargueacmp2400.azurecr.io/final
 
   tf-stage-2:
     needs: build-tag-push
