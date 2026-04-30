@@ -1,29 +1,27 @@
 name: Terraform-Runner
 description: Run Terraform stages using a custom container action.
-
 inputs:
-  arm_subscription_id:
-    description: Azure subsctiption id
+  ARM_SUBSCRIPTION_ID:
+    description: Azure subscription id
     required: true
-  arm_tenant_id:
+  ARM_TENANT_ID:
     description: Azure tenant id
     required: true
-  arm_client_id:
+  ARM_CLIENT_ID:
     description: Azure client id
     required: true
-  arm_client_secret:
+  ARM_CLIENT_SECRET:
     description: Azure client secret
     required: true
-  state_key:
+  STATE_KEY:
     description: Unique backend state key prefix
     required: true
-  tf_stage:
+  TF_STAGE:
     description: Terraform stage directory to execute
     required: true
-  django_secret_key_prod:
+  DJANGO_SECRET_KEY_PROD:
     description: Django secret key value for stage 2 container deployment
     required: false
-
 runs:
   using: docker
   image: Dockerfile
