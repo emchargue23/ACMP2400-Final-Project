@@ -9,7 +9,6 @@ terraform {
       version = "4.68.0"
     }
   }
-
   backend "azurerm" {
     resource_group_name  = "rg-acmp-final"
     storage_account_name = "acmp2400storageaccount"
@@ -20,6 +19,14 @@ terraform {
 
 provider "azurerm" {
   features {}
+}
+
+resource "azurerm_container_registry" "emchargue-acr" {
+  name                = "acremchargueacmp2400"
+  resource_group_name = "rg-emchargue"
+  location            = "Central US"
+  sku                 = "Basic"
+  admin_enabled       = false
 }
 
 resource "azurerm_container_group" "emchargue-aci" {
